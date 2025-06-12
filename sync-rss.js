@@ -168,6 +168,8 @@ async function handleFeed(feed, category) {
 }
 
 function getCategoryAndId(title, link) {
+  if !link return {category: res, id};
+
   let m = title.match(done);
   m = m[1];
   let res, id;
