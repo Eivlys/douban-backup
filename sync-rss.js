@@ -181,15 +181,12 @@ async function handleFeed(feed, category) {
 }
 
 function getCategoryAndId(title, link) {
-    console.log('getCategoryAndId', title, link);
-    if (!link) return { category: '', id: '' };
-
     let m = title.match(done);
     m = m[1];
     let res, id;
     switch (m) {
         case '看过':
-            if (link.startsWith('http://movie.douban.com/')) {
+            if (link.startsWith('https://movie.douban.com/')) {
                 res = CATEGORY.movie; // "看过" maybe 舞台剧
                 id = link.match(/movie\.douban\.com\/subject\/(\d+)\/?/);
                 id = id[1]; // string
